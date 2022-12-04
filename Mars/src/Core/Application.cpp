@@ -15,7 +15,7 @@ namespace Mars
             return;
         }
 
-        std::cout << "Created Application: {" << specs.name << "}" << std::endl;
+        std::cout << "Created " << specs.name << std::endl;
 
         window = glfwCreateWindow(specs.width, specs.height, specs.name.data(), nullptr, nullptr);
         glfwSetWindowUserPointer(window, this);
@@ -81,10 +81,13 @@ namespace Mars
             auto event = Event(ScrollWheelEvent(float(x), float(y)));
             data->onEvent(event);
         });
+
+        Renderer::Init();
     }
 
     Application::~Application()
     {
+        Renderer::Shutdown();
         glfwDestroyWindow(window);
         glfwTerminate();
     }
@@ -97,7 +100,9 @@ namespace Mars
             const float timestep = glfwGetTime();
 
             // TODO: Update UI
-            // TODO: Begin and end render
+
+            Renderer::BeginRender();
+            Renderer::EndRender();
         }
     }
 
@@ -113,5 +118,7 @@ namespace Mars
 
             default: break;
         }
+
+        Renderer::OnEvent(event);
     }
 }

@@ -6,6 +6,7 @@
 
 #include "Base.hpp"
 #include <GLFW/glfw3.h>
+#include "../Renderer/Renderer.hpp"
 
 namespace Mars
 {

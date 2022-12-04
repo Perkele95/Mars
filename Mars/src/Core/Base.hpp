@@ -15,4 +15,3 @@
 #ifndef NDEBUG
 #define ENABLE_VALIDATION
 #endif
-

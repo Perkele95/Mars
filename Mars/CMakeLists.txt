@@ -1,5 +1,6 @@
 add_library(Mars STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src/Core/Application.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Renderer/Renderer.cpp src/Renderer/Renderer.cpp
         )
 
 set_target_properties(Mars PROPERTIES PREFIX "")
