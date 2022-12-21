@@ -3,6 +3,7 @@
 //
 
 #include "Renderer.hpp"
+#include "Renderer3D.hpp"
 
 namespace Mars
 {
